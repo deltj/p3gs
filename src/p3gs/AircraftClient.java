@@ -2,7 +2,10 @@
  * Copyright 2017 Ted DeLoggio
  * 
  * Reuse permitted under the terms of the MIT open source license.
+<<<<<<< HEAD
+=======
  * See license.txt or https://opensource.org/licenses/MIT for terms.
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
  */
 package p3gs;
 
@@ -12,9 +15,13 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+<<<<<<< HEAD
+/*
+=======
 /**
  * TCP/IP client for communicating with the DJI Phantom 3 aircraft.
  */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 public class AircraftClient extends Connection implements Observer {
 	
 	//  Singleton instance
@@ -32,10 +39,13 @@ public class AircraftClient extends Connection implements Observer {
 	//  ArrayList of event listeners
 	private ArrayList<P3PacketReceivedEventListener> packetListeners = null;
 
+<<<<<<< HEAD
+=======
 	/**
 	 * Singleton get instance function
 	 * @return The instance
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	public static AircraftClient getInstance() {
 		if (instance == null) {
 			instance = new AircraftClient();
@@ -43,9 +53,12 @@ public class AircraftClient extends Connection implements Observer {
 		return instance;
 	}
 	
+<<<<<<< HEAD
+=======
 	/**
 	 * Constructor
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	private AircraftClient() {
 		packetListeners = new ArrayList<P3PacketReceivedEventListener>();
 		
@@ -53,14 +66,24 @@ public class AircraftClient extends Connection implements Observer {
 		//  being received
 		parser.addObserver(this);
 	}
+<<<<<<< HEAD
+
+=======
 	
 	/**
 	 * Adds the specified event listener to the list of listeners
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	public void addP3PacketReceivedEventListener(P3PacketReceivedEventListener l) {
 		this.packetListeners.add(l);
 	}
 	
+<<<<<<< HEAD
+	public void removeP3PacketReceivedEventListener(P3PacketReceivedEventListener l) {
+		this.packetListeners.remove(l);
+	}
+
+=======
 	/**
 	 * Removes the specified event listener from the list of listeners
 	 */
@@ -71,6 +94,7 @@ public class AircraftClient extends Connection implements Observer {
 	/**
 	 * Notifies all P3PacketReceivedEventListeners that a new packet has been received
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	protected void fireP3PacketReceivedEvent(P3Packet pkt) {
 		P3PacketReceivedEvent pre = new P3PacketReceivedEvent(this);
 		pre.packet = pkt;
@@ -79,10 +103,14 @@ public class AircraftClient extends Connection implements Observer {
 			l.p3PacketStatEventReceived(pre);
 		}
 	}
+<<<<<<< HEAD
+
+=======
 	
 	/**
 	 * override of Connection.connect
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public void connect() {
 		try {
@@ -96,26 +124,37 @@ public class AircraftClient extends Connection implements Observer {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
+
+=======
 	
 	/**
 	 * override of Connection.disconnect
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public void disconnect() {
 		rt.kill();
 	}
 
+<<<<<<< HEAD
+=======
 	/**
 	 * override of Connection.getConnectionStatus
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public ConnectionStatus getConnectionStatus() {
 		return null;
 	}
+<<<<<<< HEAD
+
+=======
 	
 	/**
 	 * override of Observable.update
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public void update(Observable o, Object arg) {
 		//TODO: use invokeLater or something to make sure this is happening on
@@ -126,3 +165,7 @@ public class AircraftClient extends Connection implements Observer {
 		}
 	}
 }
+<<<<<<< HEAD
+*/
+=======
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52

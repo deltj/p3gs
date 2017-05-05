@@ -2,6 +2,17 @@
  * Copyright 2017 Ted DeLoggio
  * 
  * Reuse permitted under the terms of the MIT open source license.
+<<<<<<< HEAD
+ */
+package p3gs;
+
+import java.nio.channels.SocketChannel;
+
+/**
+ * This class manages the TCP/IP connection to the Phantom 3 controller.
+ */
+public class ControllerClient extends Connection implements P3PacketReceivedEventListener {
+=======
  * See license.txt or https://opensource.org/licenses/MIT for terms.
  */
 package p3gs;
@@ -19,12 +30,16 @@ public class ControllerClient extends Connection implements Observer {
 	
 	//  Singleton instance
 	private static ControllerClient instance = null;
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	
 	//  SocketChannel for communicating with the server
 	private SocketChannel sc = null;
 	
 	//  Worker thread that will receive and parse data from the server
 	private P3PacketReceiveThread rt = new P3PacketReceiveThread();
+<<<<<<< HEAD
+
+=======
 	
 	//  Phantom 3 packet parser
 	private P3Parser parser = new P3Parser();
@@ -83,6 +98,7 @@ public class ControllerClient extends Connection implements Observer {
 	/**
 	 * override of Connection.connect
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public void connect() {
 		try {
@@ -90,6 +106,17 @@ public class ControllerClient extends Connection implements Observer {
 			sc.connect(isa);
 			sc.configureBlocking(false);
 			rt.setSocketChanel(sc);
+<<<<<<< HEAD
+			
+			rt.addP3PacketReceivedEventListener(this);
+			
+			rt.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+=======
 			rt.setParser(parser);
 			rt.start();
 		} catch (IOException e) {
@@ -100,19 +127,29 @@ public class ControllerClient extends Connection implements Observer {
 	/**
 	 * override of Connection.disconnect
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public void disconnect() {
 		rt.kill();
 	}
 
+<<<<<<< HEAD
+=======
 	/**
 	 * override of Connection.getConnectionStatus
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	@Override
 	public ConnectionStatus getConnectionStatus() {
 		return null;
 	}
 
+<<<<<<< HEAD
+	@Override
+	public void p3PacketStatEventReceived(P3PacketReceivedEvent evt) {
+		System.out.println(evt.packet.toString());
+		System.out.println("Payload: " + evt.packet.getPayloadByteString());		
+=======
 	/**
 	 * override of Observable.update
 	 */
@@ -124,5 +161,6 @@ public class ControllerClient extends Connection implements Observer {
 		while (parser.hasPackets()) {
 			fireP3PacketReceivedEvent(parser.getNextPacket());
 		}
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	}
 }

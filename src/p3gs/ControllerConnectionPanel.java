@@ -16,18 +16,26 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
+<<<<<<< HEAD
+/*
+=======
 /**
  * JPanel to display information about the Phantom 3 Controller
  */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 public class ControllerConnectionPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
 	private JTable table;
+<<<<<<< HEAD
+
+=======
 	
 	/**
 	 * A class to describe some summary data about the types of packets received
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	private class PacketSummary {
 		public int type;
 		public long count;
@@ -43,10 +51,14 @@ public class ControllerConnectionPanel extends JPanel {
 		}
 		return hexString;
 	}
+<<<<<<< HEAD
+
+=======
 	
 	/**
 	 * Table model for PacketSummary
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	private class PacketSummaryTableModel extends AbstractTableModel implements P3PacketReceivedEventListener {
 
 		private static final long serialVersionUID = 1L;
@@ -101,6 +113,9 @@ public class ControllerConnectionPanel extends JPanel {
 			
 			//  Have we already seen this packet type?
 			for (PacketSummary ps : packetSummaryTable) {
+<<<<<<< HEAD
+
+=======
 				if (ps.type == pkt.type) {
 					//  Yes, update the table
 					int row = packetSummaryTable.indexOf(ps);
@@ -109,12 +124,17 @@ public class ControllerConnectionPanel extends JPanel {
 					fireTableRowsUpdated(row, row);
 					found = true;
 				}
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 			}
 			
 			if (!found) {
 				//  No, add a new row to the table
 				PacketSummary ps = new PacketSummary();
+<<<<<<< HEAD
+				//ps.type = pkt.type;
+=======
 				ps.type = pkt.type;
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 				ps.count = 1;
 				ps.data = pkt.getData().clone();
 				
@@ -126,9 +146,12 @@ public class ControllerConnectionPanel extends JPanel {
 		}
 	}
 	
+<<<<<<< HEAD
+=======
 	/**
 	 * Create the panel.
 	 */
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	public ControllerConnectionPanel() {
 		//setBorder(new LineBorder(Color.BLACK, 1));
 		
@@ -161,3 +184,7 @@ public class ControllerConnectionPanel extends JPanel {
 		ControllerClient.getInstance().connect();
 	}
 }
+<<<<<<< HEAD
+*/
+=======
+>>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
