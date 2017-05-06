@@ -13,22 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 
-<<<<<<< HEAD
 /*
-=======
->>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 public class MainFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
 
-<<<<<<< HEAD
-=======
-	/**
-	 * Create the frame.
-	 */
->>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -49,7 +40,4 @@ public class MainFrame extends JFrame {
 	}
 
 }
-<<<<<<< HEAD
 */
-=======
->>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52

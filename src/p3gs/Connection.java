@@ -2,10 +2,6 @@
  * Copyright 2017 Ted DeLoggio
  * 
  * Reuse permitted under the terms of the MIT open source license.
-<<<<<<< HEAD
-=======
- * See license.txt or https://opensource.org/licenses/MIT for terms.
->>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
  */
 package p3gs;
 
@@ -29,11 +25,7 @@ public abstract class Connection {
 	}
 	
 	/**
-<<<<<<< HEAD
 	 * Specify the server to connect to
-=======
-	 * Specify the server to connecto to
->>>>>>> ff4dc30e813357e6a845a625175e8650db9b9a52
 	 * @param host A hostname or IP Address
 	 * @param port A port number
 	 */
